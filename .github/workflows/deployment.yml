@@ -25,6 +25,9 @@ jobs:
             - name: Run CI command
               run: npm ci
 
+            - name: Fix linting
+              run: npm run lint--fix
+
             - name: Check linting
               run: npm run lint
             
