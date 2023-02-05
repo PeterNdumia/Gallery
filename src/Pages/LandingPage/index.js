@@ -1,11 +1,12 @@
 import React from 'react';
+import AboutSection from './components/AboutSection';
 import NavBar from './components/NavBar';
 
 function LandingPage() {
     return (
-        <div className='w-full h-full shadow-sm container'>
+        <div className='container flex flex-col w-full h-full'>
             <NavBar/>
-            
+            <AboutSection/> 
         </div>
     );
 }
