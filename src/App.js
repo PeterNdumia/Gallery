@@ -5,7 +5,7 @@ import LandingPage from './Pages/LandingPage';
 
 function App() {
     return (
-        <div className='w-[100vw] h-full'>
+        <div className=''>
             <Routes>
                 <Route path="/"  element={<LandingPage/>}></Route>
     
