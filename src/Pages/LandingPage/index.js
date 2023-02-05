@@ -1,8 +1,10 @@
 import React from 'react';
+import NavBar from './components/NavBar';
 
-function LandingPage(props) {
+function LandingPage() {
     return (
-        <div>
+        <div className='w-full h-full shadow-sm container'>
+            <NavBar/>
             
         </div>
     );
