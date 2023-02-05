@@ -5,7 +5,7 @@ function NavBar() {
     const [miniNav, setMiniNav]=  useState(true);
     const [showMenu,setShowMenu]= useState(false);
     return (
-        <div className='container w-full shadow-sm'>
+        <div className='container w-full fixed shadow-sm bg-white'>
             <div className='container flex flex-row justify-between w-full h-[50px] px-3'>
                 <h2 className='flex justify-start text-3xl md:text-4xl text-primary mt-2 '>GALLERY</h2>
                 <div className='flex-row justify-end hidden md:flex'>
