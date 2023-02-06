@@ -1,6 +1,6 @@
 import React from 'react';
 import AboutSection from './components/AboutSection';
-import Footer from './components/Footer';
+import Footer from '../../components/Footer';
 import GettingStartedSection from './components/GettingStartedSection';
 import NavBar from '../../components/NavBar';
 

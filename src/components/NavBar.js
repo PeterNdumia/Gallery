@@ -1,12 +1,14 @@
 import jwtDecode from 'jwt-decode';
 import React, {useContext, useEffect} from 'react';
-import AppContext from '../AppContext';
+import { useNavigate } from 'react-router-dom';
+import AppContext from '../context/AppContext';
 
 function NavBar() {
     const {user, setUser} = useContext(AppContext);
     const {isLoggedIn,setIsLoggedIn} = useContext(AppContext);
     console.log(user);
     const google = window.google;
+    const navigate = useNavigate();
 
     function handleCallbackResponse(response){
         console.log('Encoded JWT ID Token' + response.credential);
@@ -51,7 +53,8 @@ function NavBar() {
         setUser({});
         setIsLoggedIn(false);
         localStorage.clear();
-        document.getElementById('loginDiv').hidden = false;  
+        document.getElementById('loginDiv').hidden = false;
+        navigate('/');
     }
 
     useEffect(()=>{
@@ -64,12 +67,14 @@ function NavBar() {
     return (
         <div className='container w-full fixed shadow-sm bg-white'>
             <div className='container flex flex-row justify-between w-full h-[50px] px-3'>
-                <h2 onClick={()=>{
+                <button onClick={()=>{
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth',
                     });
-                }} className='flex justify-start text-3xl md:text-4xl text-primary mt-2 '>GALLERY</h2>
+                    navigate('/');
+                    
+                }} className='flex justify-start text-3xl md:text-4xl text-primary mt-2 '>GALLERY</button>
                 <div className='flex-row justify-end flex'>
                     <div id='loginDiv' className='self-center'>
                     </div>
