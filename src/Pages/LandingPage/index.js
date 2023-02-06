@@ -6,7 +6,7 @@ import NavBar from '../../components/NavBar';
 
 function LandingPage() {
     return (
-        <div className='container flex flex-col'>
+        <div data-testid='landing-page' className='container flex flex-col'>
             <NavBar/>
             <AboutSection/> 
             <GettingStartedSection/>
