@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useContext,  useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import BackNav from '../../../components/BackNav';
 import Loading from '../../../components/Loading';
 import AppContext from '../../../context/AppContext';
 
@@ -12,6 +14,10 @@ function PhotoCard() {
     console.log(chosenPhoto);
     const [photoTitle, setPhotoTitle] = useState();
     const {isLoading, setIsLoading} = useContext(AppContext);
+    const navigate = useNavigate();
+    function handleBack(){
+        navigate('/albumPage');
+    }
    
     const getPhotoTitle = async ()=>{
         setIsLoading(true);
@@ -40,8 +46,10 @@ function PhotoCard() {
         <>
             { isLoading? (<Loading/>):(
                 <div className='container flex flex-col justify-center w-full'>
-                    <p className='text-lg md:text-3xl text-center mt-24'>{photoTitle}</p>
-     
+                    <div className='container flex flex-row items-center justify-center mt-24 px-8'>
+                        <BackNav handleBack={handleBack} />
+                        <p className='text-lg md:text-3xl text-center w-[80%]'>{photoTitle}</p>
+                    </div>
                     <div className='container rounded-lg shadow-lg bg-white max-w-sm md:max-w-4xl items-center justify-center p-1 flex flex-row self-center mt-12'>
                         <img src={chosenPhoto.url} className='md:max-w-lg max-w-[200px]' />
                         <div className='items-center flex flex-col md:ml-6 ml-4 '>
