@@ -22,7 +22,7 @@ function NavBar() {
 
     function handleLogin(){
        
-        console.log('Navigation to Home page');
+        navigate('/homePage');
     }
 
   

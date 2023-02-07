@@ -15,9 +15,10 @@ function App() {
     const [avUser, setAvUser] = useState({});
     const [album, setAlbum] = useState({});
     const [photo, setPhoto] = useState({});
+    const [isLoading,setIsLoading]= useState(false);
     return (
         <div className=''>
-            <AppContext.Provider value={{user, setUser, isLoggedIn, setIsLoggedIn, baseUrl, avUser, setAvUser, album, setAlbum, photo, setPhoto}}>
+            <AppContext.Provider value={{user, setUser, isLoggedIn, setIsLoggedIn, baseUrl, avUser, setAvUser, album, setAlbum, photo, setPhoto, isLoading, setIsLoading}}>
                 <Routes>
                     <Route path="/"  element={<LandingPage/>}></Route>
                     <Route path="/homePage"  element={<HomePage/>}></Route>
