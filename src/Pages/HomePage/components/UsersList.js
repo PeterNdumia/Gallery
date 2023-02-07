@@ -19,7 +19,7 @@ function UsersList() {
 
     },[]);
     return (
-        <div className='mt-20 grid grid-cols-2 md:grid-cols-4 gap-4'>
+        <div className='md:mt-20 mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:px-4  px-0'>
             {avUsers.map((avUser)=>{
                 return (<UserItem key={avUser.id}  avUser={avUser}/>);
             })}
