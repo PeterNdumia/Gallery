@@ -7,7 +7,7 @@ import HomePage from '../Pages/HomePage';
 import UserPage from '../Pages/UserPage';
 import AlbumPage from '../Pages/AlbumPage';
 import PhotoPage from '../Pages/PhotoPage';
-
+const google = window.google;
 function App() {
     const [user,setUser] = useState({});
     const [isLoggedIn,setIsLoggedIn]= useState(false);
@@ -18,7 +18,7 @@ function App() {
     const [isLoading,setIsLoading]= useState(false);
     return (
         <div className=''>
-            <AppContext.Provider value={{user, setUser, isLoggedIn, setIsLoggedIn, baseUrl, avUser, setAvUser, album, setAlbum, photo, setPhoto, isLoading, setIsLoading}}>
+            <AppContext.Provider value={{google, user, setUser, isLoggedIn, setIsLoggedIn, baseUrl, avUser, setAvUser, album, setAlbum, photo, setPhoto, isLoading, setIsLoading}}>
                 <Routes>
                     <Route path="/"  element={<LandingPage/>}></Route>
                     <Route path="/homePage"  element={<HomePage/>}></Route>

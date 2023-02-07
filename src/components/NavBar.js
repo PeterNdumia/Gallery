@@ -3,10 +3,13 @@ import React, {useContext, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 
+
+
 function NavBar() {
     const {user, setUser} = useContext(AppContext);
     const {isLoggedIn,setIsLoggedIn} = useContext(AppContext);
     console.log(user);
+    const {google} = useContext(AppContext);
   
     const navigate = useNavigate();
 
@@ -27,7 +30,6 @@ function NavBar() {
 
   
     const initGoogle =  ()=>{
-        /* global google */
         const loggedInUser = localStorage.getItem('user');
         if (loggedInUser) {
             setIsLoggedIn(true);
