@@ -1,6 +1,6 @@
 # Gallery
 
-This is an app that allows you to view albums and their photos which belong to specific users. The application allows login using Google OAuth and persists user data using local storage. The consumes data from https://jsonplaceholder.typicode.com/ .
+This is an app that allows you to view albums and their photos which belong to specific users. The application allows login using Google OAuth and persists user data using local storage. The app consumes data from https://jsonplaceholder.typicode.com/ .
 
 ## Languages used
 
