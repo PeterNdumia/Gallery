@@ -9,7 +9,6 @@ function NavBar() {
     const {user, setUser} = useContext(AppContext);
     const {isLoggedIn,setIsLoggedIn} = useContext(AppContext);
     console.log(user);
-    const {google} = useContext(AppContext);
   
     const navigate = useNavigate();
 
@@ -61,6 +60,7 @@ function NavBar() {
     }
 
     useEffect(()=>{
+        /* global google */
         initGoogle();
     },[isLoggedIn]);
 
