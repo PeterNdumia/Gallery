@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import AppContext from '../../../context/AppContext';
+import { useNavigate } from 'react-router-dom';
 
 function UserItem({avUser}) {
     const {baseUrl} = useContext(AppContext);
     const [albums,setAlbums] = useState([]);
-    const {setAvUserId} =useContext(AppContext);
+    const {setAvUser} =useContext(AppContext);
+    const navigate = useNavigate();
 
     const getAlbums = async ()=>{
         const res = await axios.get(`${baseUrl}user/${avUser.id}/albums`);
@@ -25,10 +27,10 @@ function UserItem({avUser}) {
             <p className='text-black lg:text-xl text-lg mt-2'>{avUser.username}</p>
             <p className='text-black lg:text-lg text-md mt-2'>Has {albums.length} albums</p>
             <button onClick={()=>{
-                console.log('navigate to user page');
-                console.log(avUser.id);
-                setAvUserId(avUser.id);
-               
+                console.log(avUser);
+                setAvUser(avUser);
+                localStorage.setItem('chosenUser',JSON.stringify(avUser));
+                navigate('/userPage');    
             }} className='px-4 rounded-md border-2 border-primary bg-white text-primary py-2 mt-5 hover:bg-primary hover:text-white'>View Albums</button>
         </div>
    
