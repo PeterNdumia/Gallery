@@ -7,7 +7,7 @@ function NavBar() {
     const {user, setUser} = useContext(AppContext);
     const {isLoggedIn,setIsLoggedIn} = useContext(AppContext);
     console.log(user);
-    const google = window.google;
+  
     const navigate = useNavigate();
 
     function handleCallbackResponse(response){
@@ -27,6 +27,7 @@ function NavBar() {
 
   
     const initGoogle =  ()=>{
+        /* global google */
         const loggedInUser = localStorage.getItem('user');
         if (loggedInUser) {
             setIsLoggedIn(true);
