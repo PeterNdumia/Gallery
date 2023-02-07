@@ -1,14 +1,24 @@
 import jwtDecode from 'jwt-decode';
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 
+const loadScript = (src) =>
+    new Promise((resolve, reject) => {
+        if (document.querySelector(`script[src="${src}"]`)) return resolve();
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = () => resolve();
+        script.onerror = (err) => reject(err);
+        document.body.appendChild(script);
+    });
 
 
 function NavBar() {
     const {user, setUser} = useContext(AppContext);
     const {isLoggedIn,setIsLoggedIn} = useContext(AppContext);
     console.log(user);
+    const googleButton = useRef(null);
   
     const navigate = useNavigate();
 
@@ -38,15 +48,28 @@ function NavBar() {
      
         if(!loggedInUser){
             setIsLoggedIn(false);
-            google.accounts.id.initialize({
-                client_id:'580709505371-74h8ub339b58082lr8qiqfu9jnpii1t9.apps.googleusercontent.com',
-                callback: handleCallbackResponse
-            });
-
-            google.accounts.id.renderButton(
-                document.getElementById('loginDiv'),
-                {theme: 'outline', size: 'large'}
-            );
+         
+            const src = 'https://accounts.google.com/gsi/client';
+            const id = '580709505371-74h8ub339b58082lr8qiqfu9jnpii1t9.apps.googleusercontent.com';
+            loadScript(src)
+                .then(() => {
+                    /*global google*/
+                    console.log(google);
+                    google.accounts.id.initialize({
+                        client_id: id,
+                        callback: handleCallbackResponse,
+                    });
+                    google.accounts.id.renderButton(
+                        googleButton.current, 
+                        { theme: 'outline', size: 'large' } 
+                    );
+                })
+                .catch(console.error);
+      
+            return () => {
+                const scriptTag = document.querySelector(`script[src="${src}"]`);
+                if (scriptTag) document.body.removeChild(scriptTag);
+            };
         }
 
     };
@@ -60,7 +83,6 @@ function NavBar() {
     }
 
     useEffect(()=>{
-        /* global google */
         initGoogle();
     },[isLoggedIn]);
 
@@ -79,7 +101,7 @@ function NavBar() {
                     
                 }} className='flex justify-start text-3xl md:text-4xl text-primary mt-2 '>GALLERY</button>
                 <div className='flex-row justify-end flex'>
-                    <div id='loginDiv' className='self-center'>
+                    <div id='loginDiv' ref={googleButton} className='self-center'>
                     </div>
                     {Object.keys(user).length != 0 &&
                         <button onClick={()=>{
