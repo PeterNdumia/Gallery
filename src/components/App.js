@@ -6,6 +6,7 @@ import AppContext from '../context/AppContext';
 import HomePage from '../Pages/HomePage';
 import UserPage from '../Pages/UserPage';
 import AlbumPage from '../Pages/AlbumPage';
+import PhotoPage from '../Pages/PhotoPage';
 
 function App() {
     const [user,setUser] = useState({});
@@ -13,15 +14,16 @@ function App() {
     const baseUrl = 'https://jsonplaceholder.typicode.com/';
     const [avUser, setAvUser] = useState({});
     const [album, setAlbum] = useState({});
-    const [photoId, setPhotoId] = useState({});
+    const [photo, setPhoto] = useState({});
     return (
         <div className=''>
-            <AppContext.Provider value={{user, setUser, isLoggedIn, setIsLoggedIn, baseUrl, avUser, setAvUser, album, setAlbum, photoId, setPhotoId}}>
+            <AppContext.Provider value={{user, setUser, isLoggedIn, setIsLoggedIn, baseUrl, avUser, setAvUser, album, setAlbum, photo, setPhoto}}>
                 <Routes>
                     <Route path="/"  element={<LandingPage/>}></Route>
                     <Route path="/homePage"  element={<HomePage/>}></Route>
                     <Route path="/userPage"  element={<UserPage/>}></Route>
                     <Route path="/albumPage"  element={<AlbumPage/>}></Route>
+                    <Route path="/photoPage"  element={<PhotoPage/>}></Route>
     
     
                 </Routes>

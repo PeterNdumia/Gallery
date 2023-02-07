@@ -24,8 +24,8 @@ function UsersList() {
     },[]);
     return (
         <div className='md:mt-20 mt-10 grid grid-cols-3 md:grid-cols-6 gap-4 md:px-4  px-0'>
-            {photos.map((photo)=>{
-                return (<PhotoItem key={photo.id}  photo={photo}/>);
+            {photos.map((photoItem)=>{
+                return (<PhotoItem key={photoItem.id}  photoItem={photoItem}/>);
             })}
         </div>
     );
