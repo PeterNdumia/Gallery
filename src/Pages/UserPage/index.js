@@ -1,7 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../../components/Footer';
-import NavBar from '../../components/NavBar';
 import IntroSection from './components/IntroSection';
 import AlbumsList from './components/AlbumsList';
 
@@ -13,10 +11,8 @@ function UserPage() {
 
     return (<>
         {loggedInUser ? (<div className='container flex flex-col w-screen'>
-            <NavBar/>
             <IntroSection/>
             <AlbumsList/>
-            <Footer/>
             
         </div>):(
             <div className='container flex flex-col w-screen items-center'>

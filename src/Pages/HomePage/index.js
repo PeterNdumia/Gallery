@@ -1,7 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../../components/Footer';
-import NavBar from '../../components/NavBar';
 import UsersList from './components/UsersList';
 import WelcomeSection from './components/WelcomeSection';
 
@@ -12,10 +10,8 @@ function HomePage() {
 
     return (<>
         {loggedInUser ? (<div className='container flex flex-col w-screen'>
-            <NavBar/>
             <WelcomeSection/>
             <UsersList/>
-            <Footer/>
             
         </div>):(
             <div className='container flex flex-col w-screen items-center'>

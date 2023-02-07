@@ -1,7 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../../components/Footer';
-import NavBar from '../../components/NavBar';
 import PhotoCard from './components/PhotoCard';
 
 function PhotoPage() {
@@ -12,9 +10,7 @@ function PhotoPage() {
 
     return (<>
         {loggedInUser ? (<div className='container flex flex-col w-screen'>
-            <NavBar/>
             <PhotoCard/>
-            <Footer/>
             
         </div>):(
             <div className='container flex flex-col w-screen items-center'>
