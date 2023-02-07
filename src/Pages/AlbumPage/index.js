@@ -16,7 +16,7 @@ function AlbumPage() {
             <PhotosList/>
             
         </div>):(
-            <div className='container flex flex-col w-screen items-center'>
+            <div className='container flex flex-col w-screen h-screen justify-center items-center'>
                 <h1 className='text-4xl text-center'>You are not authorized to view this page. Please Go back to login</h1>
                 <button onClick={()=>{
                     navigate('/');
