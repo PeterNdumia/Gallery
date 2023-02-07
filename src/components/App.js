@@ -9,6 +9,7 @@ import AlbumPage from '../Pages/AlbumPage';
 import PhotoPage from '../Pages/PhotoPage';
 import NavBar from './NavBar';
 import Footer from './Footer';
+import PageNotFound from '../Pages/PageNotFound';
 function App() {
     const [user,setUser] = useState({});
     const [isLoggedIn,setIsLoggedIn]= useState(false);
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/userPage"  element={<UserPage/>}></Route>
                     <Route path="/albumPage"  element={<AlbumPage/>}></Route>
                     <Route path="/photoPage"  element={<PhotoPage/>}></Route>
+                    <Route path="*"  element={<PageNotFound/>}></Route>
     
     
                 </Routes>
