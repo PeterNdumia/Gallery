@@ -1,6 +1,6 @@
 # Gallery
 
-This is an app that allows you to view albums and their photos which belong to specific users. The application allows login using Google OAuth and persists user data using local storage. 
+This is an app that allows you to view albums and their photos which belong to specific users. The application allows login using Google OAuth and persists user data using local storage. The consumes data from https://jsonplaceholder.typicode.com/ .
 
 ## Languages used
 
@@ -17,6 +17,10 @@ This is an app that allows you to view albums and their photos which belong to s
 ## Live Link
 
 The app is live here https://gallery-ten-kohl.vercel.app/
+
+## API
+
+https://jsonplaceholder.typicode.com/
 
 ## Available Scripts
 
@@ -42,10 +46,6 @@ Fixes the lint errors which can be fixed using the --fix post-fix
 ### `npm run build`
 
 Builds the app for production to the `build` folder.
-
-## Possible Bug
-
-Google Auth takes time to initialize when the application is opened. Please refresh the landing page if it appears blank.
 
 
 ## MIT License
