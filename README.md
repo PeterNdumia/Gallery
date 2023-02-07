@@ -27,11 +27,11 @@ Open http://localhost:3000 to view it in your browser.
 
 Launches the test runner in the interactive watch mode.
 
-### `npm lint
+### `npm lint`
 
 Launches the lint runner to check for lint errors
 
-### `npm lint--fix
+### `npm lint--fix`
 
 Fixes the lint errors which can be fixed using the --fix post-fix
 
@@ -39,7 +39,7 @@ Fixes the lint errors which can be fixed using the --fix post-fix
 
 Builds the app for production to the `build` folder.
 
-##Possible Bug
+## Possible Bug
 
 Google Auth takes time to initialize when the application is opened. Please refresh the landing page if it appears blank.
 
