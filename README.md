@@ -14,6 +14,10 @@ This is an app that allows you to view albums and their photos which belong to s
 - Tailwind
 - Google Identity Services (Google OAuth)
 
+## Live Link
+
+The app is live here https://gallery-ten-kohl.vercel.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
