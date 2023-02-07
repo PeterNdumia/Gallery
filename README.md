@@ -2,11 +2,11 @@
 
 This is an app that allows you to view albums and their photos which belong to specific users. The application allows login using Google OAuth and persists user data using local storage. 
 
-##Languages used
+## Languages used
 
 - React Js
 
-##Technologies
+## Technologies
 
 - Vercel 
 - CI/CD using Github Actions
